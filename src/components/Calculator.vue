@@ -35,10 +35,11 @@
 		},
 
 		methods: {
-			calculate() {
-				const calculationString = this.values.reduce((totalValue, oneInput) => totalValue + oneInput);
-				const answer = eval(calculationString);
+			calculateEquation() {
+				const answer = eval(this.display);
+				this.display = answer;
 				console.log(answer);
+			},
 
 			displayNumberOperator(event) {
 				const buttonValue = event.target.innerText;
