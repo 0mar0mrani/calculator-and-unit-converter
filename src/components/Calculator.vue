@@ -46,6 +46,10 @@
 				this.display += buttonValue;
 				console.log(this.display);
 			},
+
+			resetCalculator() {
+				this.display = '';
+				console.log(this.display);
 			}
 		}
 	}
