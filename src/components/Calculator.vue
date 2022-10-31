@@ -30,7 +30,7 @@
 	export default {
 		data() {
 			return {
-				values: ['78', '+', '5', '*','6']
+				display: '',
 			}
 		},
 
@@ -39,7 +39,12 @@
 				const calculationString = this.values.reduce((totalValue, oneInput) => totalValue + oneInput);
 				const answer = eval(calculationString);
 				console.log(answer);
-				return answer;
+
+			displayNumberOperator(event) {
+				const buttonValue = event.target.innerText;
+				this.display += buttonValue;
+				console.log(this.display);
+			},
 			}
 		}
 	}
