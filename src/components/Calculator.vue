@@ -57,24 +57,24 @@
 		margin: 10rem auto;
 		flex-direction: column;
 		border: solid 2px #000;
-		padding: 2rem;
-		border-radius: 0.3rem;
-		/* box-shadow: 0.5rem 0.5rem #000; */
+		padding: 2rem 1rem 2rem 1rem;
+		border-radius: 1rem;
+		box-shadow: 0.3rem 0.3rem #000;
 	}
 
 	.calculator__buttons {
 		display: grid;
-		gap: 2rem;
+		gap: 1rem;
 		grid-template-columns: repeat(4, 1fr);
 	}
 
 	.calculator__display {
 		width: 100%;
 		height: 10rem;
-		font-size: 5rem;
+		font-size: 6rem;
 		margin-bottom: 2rem;
-		border: solid 1px #000;
-		text-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.072);
+		border: solid 2px #000;
+		border-radius: 2rem;
 	}
 
 	.calculator__number,
@@ -82,14 +82,15 @@
 	.calculator__operator,
 	.calculator__reset,
 	.calculator__equals {
-		font-size: 2rem;
+		font-size: 4rem;
 		width: 80%;
 		aspect-ratio : 1 / 1;
 		border-radius: 100%;
-		border: none;
+		border: solid 2px #000;
 		box-shadow: 0.5rem 0.5rem #000;
 		cursor: pointer;
 		transition: all 0.2s;
+		margin: 0 auto;
 	}
 
 	.calculator__number:active,
