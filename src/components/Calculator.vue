@@ -3,20 +3,27 @@
 		<div class="calculator__display">{{ display }}</div>
 
 		<div class="calculator__buttons">
-			<button @click="displayNumberOperator($event)" class="calculator__number">1</button>
-			<button @click="displayNumberOperator($event)" class="calculator__number">2</button>
-			<button @click="displayNumberOperator($event)" class="calculator__number">3</button>
-			<button @click="displayNumberOperator($event)" class="calculator__number">4</button>
-			<button @click="displayNumberOperator($event)" class="calculator__number">5</button>
-			<button @click="displayNumberOperator($event)" class="calculator__number">6</button>
-			<button @click="displayNumberOperator($event)" class="calculator__number">7</button>
-			<button @click="displayNumberOperator($event)" class="calculator__number">8</button>
-			<button @click="displayNumberOperator($event)" class="calculator__number">9</button>
-			<button @click="displayNumberOperator($event)" class="calculator__number">0</button>
 			<button @click="displayNumberOperator($event)" class="calculator__operator">+</button>
 			<button @click="displayNumberOperator($event)" class="calculator__operator">-</button>
 			<button @click="displayNumberOperator($event)" class="calculator__operator">*</button>
 			<button @click="displayNumberOperator($event)" class="calculator__operator">/</button>
+
+			<button @click="displayNumberOperator($event)" class="calculator__number">7</button>
+			<button @click="displayNumberOperator($event)" class="calculator__number">8</button>
+			<button @click="displayNumberOperator($event)" class="calculator__number">9</button>
+
+			<button @click="displayNumberOperator($event)" class="calculator__number">4</button>
+			<button @click="displayNumberOperator($event)" class="calculator__number">5</button>
+			<button @click="displayNumberOperator($event)" class="calculator__number">6</button>
+
+
+			<button @click="displayNumberOperator($event)" class="calculator__number">1</button>
+			<button @click="displayNumberOperator($event)" class="calculator__number">2</button>
+			<button @click="displayNumberOperator($event)" class="calculator__number">3</button>
+	
+
+			<button @click="displayNumberOperator($event)" class="calculator__number">0</button>
+
 			<button @click="displayNumberOperator($event)" class="calculator__period">.</button>
 			<button @click="resetCalculator" class="calculator__reset">C</button>
 			<button @click="calculateEquation" class="calculator__equals">=</button>
@@ -103,5 +110,13 @@
 	.calculator__equals:active {
 		box-shadow: 0rem 0rem #000;
 		transform: translate(0.5rem, 0.5rem);
+	}
+
+	.calculator__equals {
+		aspect-ratio: unset;
+		grid-column: 4 / 5;
+		grid-row: 2 / 6;
+		border-radius: 1rem;
+		width: 100%;
 	}
 </style>
