@@ -60,12 +60,7 @@
 		padding: 2rem 1rem 2rem 1rem;
 		border-radius: 1rem;
 		box-shadow: 0.3rem 0.3rem #000;
-	}
-
-	.calculator__buttons {
-		display: grid;
-		gap: 1rem;
-		grid-template-columns: repeat(4, 1fr);
+		background-color: #7B8CDE;
 	}
 
 	.calculator__display {
@@ -75,6 +70,13 @@
 		margin-bottom: 2rem;
 		border: solid 2px #000;
 		border-radius: 2rem;
+		background-color: #fff;
+	}
+
+	.calculator__buttons {
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: repeat(4, 1fr);
 	}
 
 	.calculator__number,
@@ -91,6 +93,7 @@
 		cursor: pointer;
 		transition: all 0.2s;
 		margin: 0 auto;
+		background-color: #fff;
 	}
 
 	.calculator__number:active,

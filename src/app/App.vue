@@ -25,5 +25,6 @@
 
 	body {
 		font-family: 'futura-pt', sans-serif;
+		background-color: #FAF3DD;
 	}
 </style>
