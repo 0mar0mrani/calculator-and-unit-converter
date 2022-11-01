@@ -22,9 +22,8 @@
 			<button @click="displayNumberOperator($event)" class="calculator__number">3</button>
 	
 
-			<button @click="displayNumberOperator($event)" class="calculator__number">0</button>
-
 			<button @click="displayNumberOperator($event)" class="calculator__period">.</button>
+			<button @click="displayNumberOperator($event)" class="calculator__number">0</button>
 			<button @click="resetCalculator" class="calculator__reset">C</button>
 			<button @click="calculateEquation" class="calculator__equals">=</button>
 		</div>
