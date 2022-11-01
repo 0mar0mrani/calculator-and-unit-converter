@@ -13,4 +13,7 @@
 </script>
 
 <style>
+	body {
+		font-family: 'futura-pt', sans-serif;
+	}
 </style>
