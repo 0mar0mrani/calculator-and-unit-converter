@@ -56,6 +56,10 @@
 		display: flex;
 		margin: 10rem auto;
 		flex-direction: column;
+		border: solid 2px #000;
+		padding: 2rem;
+		border-radius: 0.3rem;
+		/* box-shadow: 0.5rem 0.5rem #000; */
 	}
 
 	.calculator__buttons {
@@ -66,9 +70,11 @@
 
 	.calculator__display {
 		width: 100%;
-		height: 6rem;
+		height: 10rem;
 		font-size: 5rem;
-		background-color: antiquewhite;
+		margin-bottom: 2rem;
+		border: solid 1px #000;
+		text-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.072);
 	}
 
 	.calculator__number,
