@@ -3,27 +3,20 @@
 		<div class="calculator__display">{{ display }}</div>
 
 		<div class="calculator__buttons">
-			<div class="calculator__numbers">
-				<button @click="displayNumberOperator($event)" class="calculator__number">1</button>
-				<button @click="displayNumberOperator($event)" class="calculator__number">2</button>
-				<button @click="displayNumberOperator($event)" class="calculator__number">3</button>
-				<button @click="displayNumberOperator($event)" class="calculator__number">4</button>
-				<button @click="displayNumberOperator($event)" class="calculator__number">5</button>
-				<button @click="displayNumberOperator($event)" class="calculator__number">6</button>
-				<button @click="displayNumberOperator($event)" class="calculator__number">7</button>
-				<button @click="displayNumberOperator($event)" class="calculator__number">8</button>
-				<button @click="displayNumberOperator($event)" class="calculator__number">9</button>
-				<button @click="displayNumberOperator($event)" class="calculator__number">0</button>
-			</div>
-				
-			
-			<div class="calculator__operators">
-				<button @click="displayNumberOperator($event)" class="calculator__operator">+</button>
-				<button @click="displayNumberOperator($event)" class="calculator__operator">-</button>
-				<button @click="displayNumberOperator($event)" class="calculator__operator">*</button>
-				<button @click="displayNumberOperator($event)" class="calculator__operator">/</button>
-			</div>
-			
+			<button @click="displayNumberOperator($event)" class="calculator__number">1</button>
+			<button @click="displayNumberOperator($event)" class="calculator__number">2</button>
+			<button @click="displayNumberOperator($event)" class="calculator__number">3</button>
+			<button @click="displayNumberOperator($event)" class="calculator__number">4</button>
+			<button @click="displayNumberOperator($event)" class="calculator__number">5</button>
+			<button @click="displayNumberOperator($event)" class="calculator__number">6</button>
+			<button @click="displayNumberOperator($event)" class="calculator__number">7</button>
+			<button @click="displayNumberOperator($event)" class="calculator__number">8</button>
+			<button @click="displayNumberOperator($event)" class="calculator__number">9</button>
+			<button @click="displayNumberOperator($event)" class="calculator__number">0</button>
+			<button @click="displayNumberOperator($event)" class="calculator__operator">+</button>
+			<button @click="displayNumberOperator($event)" class="calculator__operator">-</button>
+			<button @click="displayNumberOperator($event)" class="calculator__operator">*</button>
+			<button @click="displayNumberOperator($event)" class="calculator__operator">/</button>
 			<button @click="displayNumberOperator($event)" class="calculator__period">.</button>
 			<button @click="resetCalculator" class="calculator__reset">C</button>
 			<button @click="calculateEquation" class="calculator__equals">=</button>
@@ -43,42 +36,62 @@
 			calculateEquation() {
 				const answer = eval(this.display);
 				this.display = answer;
-				console.log(answer);
 			},
 
 			displayNumberOperator(event) {
 				const buttonValue = event.target.innerText;
 				this.display += buttonValue;
-				console.log(this.display);
 			},
 
 			resetCalculator() {
 				this.display = '';
-				console.log(this.display);
 			}
 		}
 	}
 </script>
 
 <style>
-.calculator {
-	display: flex;
-	flex-direction: column;
-}
-.calculator__display {
-	width: 100%;
-	height: 6rem;
-	font-size: 5rem;
-	background-color: antiquewhite;
-}
+	.calculator {
+		max-width: 40rem;
+		display: flex;
+		margin: 10rem auto;
+		flex-direction: column;
+	}
 
-.calculator__number,
-.calculator__period,
-.calculator__operator,
-.calculator__reset,
-.calculator__equals {
-	font-size: 2rem;
-	width: 4rem;
-	height: 4rem;
-}
+	.calculator__buttons {
+		display: grid;
+		gap: 2rem;
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.calculator__display {
+		width: 100%;
+		height: 6rem;
+		font-size: 5rem;
+		background-color: antiquewhite;
+	}
+
+	.calculator__number,
+	.calculator__period,
+	.calculator__operator,
+	.calculator__reset,
+	.calculator__equals {
+		font-size: 2rem;
+		width: 80%;
+		aspect-ratio : 1 / 1;
+		border-radius: 100%;
+		border: none;
+		box-shadow: 0.5rem 0.5rem #000;
+		cursor: pointer;
+		transition: all 0.2s;
+	}
+
+	.calculator__number:active,
+	.calculator__period:active,
+	.calculator__operator:active,
+	.calculator__reset:active,
+	.calculator__equals:active {
+		box-shadow: 0rem 0rem #000;
+		transform: translate(0.5rem, 0.5rem);
+	}
 </style>
