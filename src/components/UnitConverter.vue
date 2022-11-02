@@ -25,6 +25,41 @@
 	</section>
 </template>
 
+<script>
+	export default {
+		data() {
+			return {
+				meter: '',
+				millimeter: '',
+			}
+		},
+
+		computed: {
+		},
+
+		methods: {
+			valueToMeter() {
+				this.meter = '';
+				const meter = this.millimeter / 1000;
+
+				if (meter !== 0) {
+					return this.meter = meter;
+				}
+			},
+
+			valueToMillimeter() {
+				this.millimeter = '';
+				const millimeter = this.meter * 1000;
+
+				if (millimeter !== 0) {
+					return this.millimeter = millimeter;
+				}
+			}
+
+		}
+	}
+</script>
+
 <style>
 	.unitConverter {
 		max-width: 40rem;
