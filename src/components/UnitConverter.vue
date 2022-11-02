@@ -66,27 +66,42 @@
 		margin: 10rem auto;
 		display: flex;
 		flex-direction: column;
+		background-color: #F2D7EE;
+		padding: 2rem;
+		border: solid 2px #000;
+		box-shadow: 0.3rem 0.3rem #000;
+		border-radius: 1rem;
+	}
+
+	.unitConverter__header {
+		font-size: 4rem;
+		font-weight: 600;
+		margin-bottom: 2rem;
 	}
 
 	.unitConverter__section1,
 	.unitConverter__section2 {
 		display: flex;
+		gap: 1rem;
+		margin-bottom: 1rem;
 	}
 
 	.unitConverter__input1, 
 	.unitConverter__input2 {
 		flex-grow: 1;
 		font-size: 3rem;
-	}
-
-	.unitConverter__header {
-		font-size: 4rem;
-		font-weight: 600;
+		width: 60%;
+		border-radius: 0.5rem;
+		border: solid 2px #000;
 	}
 
 	.unitConverter__selector1,
 	.unitConverter__selector2 {
 		font-size: 2rem;
+		flex-grow: 1;
 		font-weight: 600;
+		width: 40%;
+		border-radius: 0.5rem;
+		border: solid 2px #000;
 	}
 </style>
