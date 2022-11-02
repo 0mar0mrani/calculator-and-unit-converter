@@ -24,3 +24,34 @@
 		</legend>
 	</section>
 </template>
+
+<style>
+	.unitConverter {
+		max-width: 40rem;
+		margin: 10rem auto;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.unitConverter__section1,
+	.unitConverter__section2 {
+		display: flex;
+	}
+
+	.unitConverter__input1, 
+	.unitConverter__input2 {
+		flex-grow: 1;
+		font-size: 3rem;
+	}
+
+	.unitConverter__header {
+		font-size: 4rem;
+		font-weight: 600;
+	}
+
+	.unitConverter__selector1,
+	.unitConverter__selector2 {
+		font-size: 2rem;
+		font-weight: 600;
+	}
+</style>
