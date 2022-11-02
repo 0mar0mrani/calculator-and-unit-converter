@@ -1,13 +1,16 @@
 <template>
 	<Calculator/>
+	<UnitConverter/>
 </template>
 
 <script>
 	import Calculator from '../components/Calculator.vue'
+	import UnitConverter from '../components/UnitConverter.vue'
 
 	export default {
 		components: {
 			Calculator,
+			UnitConverter,
 		}
 	}
 </script>
