@@ -74,24 +74,21 @@
 			},
 
 			convertMillimetersToRightUnit(object, computed) {
-				if (object.unit === 'millimeter'){
-					return object.display = computed;
-				}
+				switch(object.unit) {
+					case 'millimeter':
+						return computed;
 
-				else if (object.unit === 'centimeter'){
-					return object.display = computed / 10;
-				}
+					case 'centimeter':
+						return computed / 10;
 
-				else if (object.unit === 'decimeter'){
-					return object.display = computed / 100;
-				}
+					case 'decimeter':
+						return computed / 100;
 
-				else if (object.unit === 'meter'){
-					return object.display = computed / 1000;
-				}
+					case 'meter':
+						return computed / 1000;
 
-				else if (object.unit === 'foot'){
-					return object.display = computed / 304.8;
+					case 'foot':
+						return computed / 304.8;
 				}
 			},
 
