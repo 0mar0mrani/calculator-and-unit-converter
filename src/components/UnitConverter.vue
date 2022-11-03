@@ -44,6 +44,49 @@
 		},
 
 		computed: {
+			section1ValueInMillimeters() {
+				if (this.section1.unit === 'millimeter'){
+					return this.section1.display;
+				}
+
+				else if (this.section1.unit === 'centimeter'){
+					return this.section1.display * 10;
+				}
+
+				else if (this.section1.unit === 'decimeter'){
+					return this.section1.display * 100;
+				}
+
+				else if (this.section1.unit === 'meter'){
+					return this.section1.display * 1000;
+				}
+
+				else if (this.section1.unit === 'foot'){
+					return this.section1.display * 304.8;
+				}
+			},
+
+			section2ValueInMillimeters() {
+				if (this.section2.unit === 'millimeter'){
+					return this.section2.display
+				}
+
+				else if (this.section2.unit === 'centimeter'){
+					return this.section2.display * 10;
+				}
+
+				else if (this.section2.unit === 'decimeter'){
+					return this.section2.display * 100;
+				}
+
+				else if (this.section2.unit === 'meter'){
+					return this.section2.display * 1000;
+				}
+
+				else if (this.section2.unit === 'foot'){
+					return this.section2.display * 304.8;
+				}
+			}
 		},
 
 		methods: {
