@@ -2,9 +2,9 @@
 	<section class="unitConverter">
 		<label class="unitConverter__header" for="length">Length Converter</label>
 		<legend class="unitConverter__section1">
-			<input @input="valueToSection2" class="unitConverter__input1" type="number" v-model="section1.display">
+			<input @input="displayToSection2" class="unitConverter__input1" type="number" v-model="section1.display">
 
-			<select @change="valueToSection1"  v-model="section1.unit"  class="unitConverter__selector1">
+			<select @change="displayToSection1"  v-model="section1.unit"  class="unitConverter__selector1">
 				<option value="millimeter">Millimeter</option>
 				<option value="centimeter">Centimeter</option>
 				<option value="decimeter">Decimeter</option>
@@ -14,9 +14,9 @@
 		</legend>
 
 		<legend class="unitConverter__section2">	
-			<input @input="valueToSection1" class="unitConverter__input2" type="number" v-model="section2.display">
+			<input @input="displayToSection1" class="unitConverter__input2" type="number" v-model="section2.display">
 	
-			<select @change="valueToSection2" v-model="section2.unit" class="unitConverter__selector2">
+			<select @change="displayToSection2" v-model="section2.unit" class="unitConverter__selector2">
 				<option value="millimeter">Millimeter</option>
 				<option value="centimeter">Centimeter</option>
 				<option value="decimeter">Decimeter</option>
@@ -83,23 +83,21 @@
 
 					case 'decimeter':
 						return computed / 100;
-
+					
 					case 'meter':
 						return computed / 1000;
-
+					
 					case 'foot':
 						return computed / 304.8;
 				}
 			},
 
-			valueToSection1() {
-				this.section1.display = '';
-				this.convertMillimetersToRightUnit(this.section1, this.section2ValueInMillimeters);
+			displayToSection1() {
+				this.section1.display = this.convertMillimetersToRightUnit(this.section1, this.section2ValueInMillimeters);
 			},
 
-			valueToSection2() {
-				this.section2.display = '';
-				this.convertMillimetersToRightUnit(this.section2, this.section1ValueInMillimeters);
+			displayToSection2() {
+				this.section2.display = this.convertMillimetersToRightUnit(this.section2, this.section1ValueInMillimeters);
 			},
 		}
 	}
