@@ -1,6 +1,6 @@
 <template>
 	<section class="unitConverter">
-		<label class="unitConverter__header" for="length">Length</label>
+		<label class="unitConverter__header" for="length">Length Converter</label>
 		<legend class="unitConverter__section1">
 			<input @input="valueToSection2" class="unitConverter__input1" type="number" v-model="section1.display">
 	
