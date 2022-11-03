@@ -93,11 +93,21 @@
 			},
 
 			displayToSection1() {
-				this.section1.display = this.convertMillimetersToRightUnit(this.section1, this.section2ValueInMillimeters);
+				this.section1.display = '';
+				const value = this.convertMillimetersToRightUnit(this.section1, this.section2ValueInMillimeters);
+
+				if (value !== 0) {
+					this.section1.display = value;
+				}
 			},
 
 			displayToSection2() {
-				this.section2.display = this.convertMillimetersToRightUnit(this.section2, this.section1ValueInMillimeters);
+				this.section2.display = '';
+				const value = this.convertMillimetersToRightUnit(this.section2, this.section1ValueInMillimeters);
+				
+				if (value !== 0) {
+					this.section2.display = value;
+				}
 			},
 		}
 	}
