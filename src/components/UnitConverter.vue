@@ -2,10 +2,9 @@
 	<section class="unitConverter">
 		<label class="unitConverter__header" for="length">Length</label>
 		<legend class="unitConverter__section1">
-			<input @input="valueToMillimeter" class="unitConverter__input1" type="number" v-model="meter">
+			<input @input="valueToSection2" class="unitConverter__input1" type="number" v-model="section1.display">
 	
-			<select class="unitConverter__selector1">
-				<option value="meter">Meter</option>
+			<select @change="valueToSection1"  v-model="section1.unit"  class="unitConverter__selector1">
 				<option value="millimeter">Millimeter</option>
 				<option value="centimeter">Centimeter</option>
 				<option value="decimeter">Decimeter</option>
@@ -15,9 +14,9 @@
 		</legend>
 
 		<legend class="unitConverter__section2">	
-			<input @input="valueToMeter" class="unitConverter__input2" type="number" v-model="millimeter">
+			<input @input="valueToSection1" class="unitConverter__input2" type="number" v-model="section2.display">
 	
-			<select class="unitConverter__selector2">
+			<select @change="valueToSection2" v-model="section2.unit" class="unitConverter__selector2">
 				<option value="millimeter">Millimeter</option>
 				<option value="centimeter">Centimeter</option>
 				<option value="decimeter">Decimeter</option>
@@ -32,8 +31,15 @@
 	export default {
 		data() {
 			return {
-				meter: '',
-				millimeter: '',
+				section1: {
+					display: '',
+					unit: "millimeter",
+				},
+				
+				section2: {
+					display: '',
+					unit: "millimeter",
+				},
 			}
 		},
 
