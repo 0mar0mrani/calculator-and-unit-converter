@@ -45,51 +45,38 @@
 
 		computed: {
 			section1ValueInMillimeters() {
-				if (this.section1.unit === 'millimeter'){
-					return this.section1.display;
-				}
-
-				else if (this.section1.unit === 'centimeter'){
-					return this.section1.display * 10;
-				}
-
-				else if (this.section1.unit === 'decimeter'){
-					return this.section1.display * 100;
-				}
-
-				else if (this.section1.unit === 'meter'){
-					return this.section1.display * 1000;
-				}
-
-				else if (this.section1.unit === 'foot'){
-					return this.section1.display * 304.8;
-				}
+				return this.getValueInMillimeters(this.section1);
 			},
 
 			section2ValueInMillimeters() {
-				if (this.section2.unit === 'millimeter'){
-					return this.section2.display
-				}
-
-				else if (this.section2.unit === 'centimeter'){
-					return this.section2.display * 10;
-				}
-
-				else if (this.section2.unit === 'decimeter'){
-					return this.section2.display * 100;
-				}
-
-				else if (this.section2.unit === 'meter'){
-					return this.section2.display * 1000;
-				}
-
-				else if (this.section2.unit === 'foot'){
-					return this.section2.display * 304.8;
-				}
+				return this.getValueInMillimeters(this.section2);
 			}
 		},
 
 		methods: {
+			getValueInMillimeters(object) {
+				if (object.unit === 'millimeter'){
+					return object.display;
+				}
+
+				else if (object.unit === 'centimeter'){
+					return object.display * 10;
+				}
+
+				else if (object.unit === 'decimeter'){
+					return object.display * 100;
+				}
+
+				else if (object.unit === 'meter'){
+					return object.display * 1000;
+				}
+
+				else if (object.unit === 'foot'){
+					return object.display * 304.8;
+				}
+			},
+
+
 			valueToSection1() {
 				this.section1.display = '';
 				
