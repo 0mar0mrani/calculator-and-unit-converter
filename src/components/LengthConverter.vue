@@ -1,6 +1,6 @@
 <template>
 	<section class="unitConverter">
-		<label class="unitConverter__header" for="length">Length Converter</label>
+		<label class="unitConverter__header" for="length">Length</label>
 		<legend class="unitConverter__section1">
 			<input @input="displayToSection2" class="unitConverter__input1" type="number" v-model="section1.display">
 
@@ -116,14 +116,19 @@
 <style>
 	.unitConverter {
 		max-width: 40rem;
-		margin: 10rem auto;
+		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
 		background-color: #F2D7EE;
 		padding: 2rem;
-		border: solid 2px #000;
-		box-shadow: 0.3rem 0.3rem #000;
-		border-radius: 1rem;
+		border-left: solid 2px #000;
+		border-right: solid 2px #000;
+		border-bottom: solid 2px #000;
+		border-radius:  0 0 1rem 1rem;
+	}
+
+	.unitConverter--blue {
+		background-color: #D9F7FA;
 	}
 
 	.unitConverter__header {
