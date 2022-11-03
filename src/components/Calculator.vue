@@ -115,7 +115,7 @@
 		aspect-ratio: unset;
 		grid-column: 4 / 5;
 		grid-row: 2 / 6;
-		border-radius: 1rem;
+		border-radius: 2rem;
 		width: 100%;
 	}
 </style>
