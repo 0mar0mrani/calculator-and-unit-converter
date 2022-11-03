@@ -9,6 +9,8 @@
 				<option value="millimeter">Millimeter</option>
 				<option value="centimeter">Centimeter</option>
 				<option value="decimeter">Decimeter</option>
+				<option value="meter">Meter</option>
+				<option value="foot">Foot</option>
 			</select>
 		</legend>
 
@@ -20,6 +22,7 @@
 				<option value="centimeter">Centimeter</option>
 				<option value="decimeter">Decimeter</option>
 				<option value="meter">Meter</option>
+				<option value="foot">Foot</option>
 			</select>
 		</legend>
 	</section>
