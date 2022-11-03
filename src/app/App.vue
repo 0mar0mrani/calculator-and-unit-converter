@@ -15,8 +15,6 @@
 		<LengthConverter v-if="showLength === true"/>
 		<WeightConverter v-if="showWeight === true"/>
 	</div>
-
-
 </template>
 
 <script>
@@ -124,13 +122,13 @@
 	.buttonLengthActive {
 		background-color: #F2D7EE;
 		border-bottom: unset;
-		transform: scale(1);
+		cursor: unset;
 	} 
-
+	
 	.buttonWeightActive {
 		background-color: #D9F7FA;
 		border-bottom: unset;
-		transform: scale(1);
+		cursor: unset;
 	}
 	
 	.buttonLengthActive img,
