@@ -3,7 +3,7 @@
 		<label class="unitConverter__header" for="length">Length Converter</label>
 		<legend class="unitConverter__section1">
 			<input @input="valueToSection2" class="unitConverter__input1" type="number" v-model="section1.display">
-	
+
 			<select @change="valueToSection1"  v-model="section1.unit"  class="unitConverter__selector1">
 				<option value="millimeter">Millimeter</option>
 				<option value="centimeter">Centimeter</option>
@@ -90,24 +90,53 @@
 		},
 
 		methods: {
-			valueToMeter() {
-				this.meter = '';
-				const meter = this.millimeter / 1000;
+			valueToSection1() {
+				this.section1.display = '';
+				
+				if (this.section1.unit === 'millimeter'){
+					return this.section1.display = this.section2ValueInMillimeters;
+				}
 
-				if (meter !== 0) {
-					return this.meter = meter;
+				else if (this.section1.unit === 'centimeter'){
+					return this.section1.display = this.section2ValueInMillimeters / 10;
+				}
+
+				else if (this.section1.unit === 'decimeter'){
+					return this.section1.display = this.section2ValueInMillimeters / 100;
+				}
+
+				else if (this.section1.unit === 'meter'){
+					return this.section1.display = this.section2ValueInMillimeters / 1000;
+				}
+
+				else if (this.section1.unit === 'foot'){
+					return this.section1.display = this.section2ValueInMillimeters / 304.8;
 				}
 			},
 
-			valueToMillimeter() {
-				this.millimeter = '';
-				const millimeter = this.meter * 1000;
+			valueToSection2() {
+				this.section2.display = '';
 
-				if (millimeter !== 0) {
-					return this.millimeter = millimeter;
+				if (this.section2.unit === 'millimeter'){
+					return this.section2.display = this.section1ValueInMillimeters;
 				}
-			}
 
+				else if (this.section2.unit === 'centimeter'){
+					return this.section2.display = this.section1ValueInMillimeters / 10;
+				}
+
+				else if (this.section2.unit === 'decimeter'){
+					return this.section2.display = this.section1ValueInMillimeters / 100;
+				}
+
+				else if (this.section2.unit === 'meter'){
+					return this.section2.display = this.section1ValueInMillimeters / 1000;
+				}
+
+				else if (this.section2.unit === 'foot'){
+					return this.section2.display = this.section1ValueInMillimeters / 304.8;
+				}
+			},
 		}
 	}
 </script>
