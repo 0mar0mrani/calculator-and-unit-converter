@@ -55,24 +55,21 @@
 
 		methods: {
 			getValueInMillimeters(object) {
-				if (object.unit === 'millimeter'){
-					return object.display;
-				}
+				switch(object.unit) {
+					case 'millimeter': 
+						return object.display;
 
-				else if (object.unit === 'centimeter'){
-					return object.display * 10;
-				}
+					case 'centimeter':
+						return object.display * 10;
 
-				else if (object.unit === 'decimeter'){
-					return object.display * 100;
-				}
+					case 'decimeter':
+						return object.display * 100;
+					
+					case 'meter':
+						return object.display * 1000;
 
-				else if (object.unit === 'meter'){
-					return object.display * 1000;
-				}
-
-				else if (object.unit === 'foot'){
-					return object.display * 304.8;
+					case 'foot':
+						return object.display * 304.8;
 				}
 			},
 
