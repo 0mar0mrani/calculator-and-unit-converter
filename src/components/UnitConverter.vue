@@ -45,16 +45,16 @@
 
 		computed: {
 			section1ValueInMillimeters() {
-				return this.getValueInMillimeters(this.section1);
+				return this.convertValueToMillimeters(this.section1);
 			},
 
 			section2ValueInMillimeters() {
-				return this.getValueInMillimeters(this.section2);
+				return this.convertValueToMillimeters(this.section2);
 			}
 		},
 
 		methods: {
-			getValueInMillimeters(object) {
+			convertValueToMillimeters(object) {
 				switch(object.unit) {
 					case 'millimeter': 
 						return object.display;
@@ -73,53 +73,36 @@
 				}
 			},
 
+			convertMillimetersToRightUnit(object, computed) {
+				if (object.unit === 'millimeter'){
+					return object.display = computed;
+				}
+
+				else if (object.unit === 'centimeter'){
+					return object.display = computed / 10;
+				}
+
+				else if (object.unit === 'decimeter'){
+					return object.display = computed / 100;
+				}
+
+				else if (object.unit === 'meter'){
+					return object.display = computed / 1000;
+				}
+
+				else if (object.unit === 'foot'){
+					return object.display = computed / 304.8;
+				}
+			},
 
 			valueToSection1() {
 				this.section1.display = '';
-				
-				if (this.section1.unit === 'millimeter'){
-					return this.section1.display = this.section2ValueInMillimeters;
-				}
-
-				else if (this.section1.unit === 'centimeter'){
-					return this.section1.display = this.section2ValueInMillimeters / 10;
-				}
-
-				else if (this.section1.unit === 'decimeter'){
-					return this.section1.display = this.section2ValueInMillimeters / 100;
-				}
-
-				else if (this.section1.unit === 'meter'){
-					return this.section1.display = this.section2ValueInMillimeters / 1000;
-				}
-
-				else if (this.section1.unit === 'foot'){
-					return this.section1.display = this.section2ValueInMillimeters / 304.8;
-				}
+				this.convertMillimetersToRightUnit(this.section1, this.section2ValueInMillimeters);
 			},
 
 			valueToSection2() {
 				this.section2.display = '';
-
-				if (this.section2.unit === 'millimeter'){
-					return this.section2.display = this.section1ValueInMillimeters;
-				}
-
-				else if (this.section2.unit === 'centimeter'){
-					return this.section2.display = this.section1ValueInMillimeters / 10;
-				}
-
-				else if (this.section2.unit === 'decimeter'){
-					return this.section2.display = this.section1ValueInMillimeters / 100;
-				}
-
-				else if (this.section2.unit === 'meter'){
-					return this.section2.display = this.section1ValueInMillimeters / 1000;
-				}
-
-				else if (this.section2.unit === 'foot'){
-					return this.section2.display = this.section1ValueInMillimeters / 304.8;
-				}
+				this.convertMillimetersToRightUnit(this.section2, this.section1ValueInMillimeters);
 			},
 		}
 	}
