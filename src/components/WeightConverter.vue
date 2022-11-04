@@ -9,6 +9,8 @@
 				<option value="decogram">Decogram</option>
 				<option value="hectogram">Hectogram</option>
 				<option value="kilogramgram">Kilogram</option>
+				<option value="ounce">Ounce</option>
+				<option value="pound">Pund</option>
 			</select>
 		</legend>
 
@@ -20,6 +22,8 @@
 				<option value="decogram">Decogram</option>
 				<option value="hectogram">Hectogram</option>
 				<option value="kilogramgram">Kilogram</option>
+				<option value="ounce">Ounce</option>
+				<option value="pound">Pund</option>
 			</select>
 		</legend>
 	</section>
@@ -65,9 +69,12 @@
 					
 					case 'kilogramgram':
 						return object.display * 1000;
-
-					case 'foot':
-						return object.display * 304.8;
+					
+					case 'ounce':
+						return object.display * 28.3495231;
+					
+					case 'pound':
+						return object.display * 453.59237;
 				}
 			},
 
@@ -85,8 +92,11 @@
 					case 'kilogramgram':
 						return computed / 1000;
 					
-					case 'foot':
-						return computed / 304.8;
+					case 'ounce':
+						return computed / 28.3495231;
+					
+					case 'pound':
+						return computed / 453.59237;
 				}
 			},
 
