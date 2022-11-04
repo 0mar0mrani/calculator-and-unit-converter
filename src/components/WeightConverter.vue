@@ -5,12 +5,12 @@
 			<input @input="displayToSection2" class="unit-converter__input1" type="number" v-model="section1.display">
 
 			<select @change="displayToSection1"  v-model="section1.unit"  class="unit-converter__selector1">
-				<option value="gram">Gram</option>
-				<option value="decogram">Decogram</option>
-				<option value="hectogram">Hectogram</option>
-				<option value="kilogramgram">Kilogram</option>
-				<option value="ounce">Ounce</option>
-				<option value="pound">Pund</option>
+				<option value="gram">Grams</option>
+				<option value="decogram">Decograms</option>
+				<option value="hectogram">Hectograms</option>
+				<option value="kilogramgram">Kilograms</option>
+				<option value="ounce">Ounces</option>
+				<option value="pound">Punds</option>
 			</select>
 		</legend>
 
@@ -18,12 +18,12 @@
 			<input @input="displayToSection1" class="unit-converter__input2" type="number" v-model="section2.display">
 	
 			<select @change="displayToSection2" v-model="section2.unit" class="unit-converter__selector2">
-				<option value="gram">Gram</option>
-				<option value="decogram">Decogram</option>
-				<option value="hectogram">Hectogram</option>
-				<option value="kilogramgram">Kilogram</option>
-				<option value="ounce">Ounce</option>
-				<option value="pound">Pund</option>
+				<option value="gram">Grams</option>
+				<option value="decogram">Decograms</option>
+				<option value="hectogram">Hectograms</option>
+				<option value="kilogramgram">Kilograms</option>
+				<option value="ounce">Ounces</option>
+				<option value="pound">Punds</option>
 			</select>
 		</legend>
 	</section>

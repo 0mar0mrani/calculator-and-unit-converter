@@ -5,11 +5,11 @@
 			<input @input="displayToSection2" class="unit-converter__input1" type="number" v-model="section1.display">
 
 			<select @change="displayToSection1"  v-model="section1.unit"  class="unit-converter__selector1">
-				<option value="millimeter">Millimeter</option>
-				<option value="centimeter">Centimeter</option>
-				<option value="decimeter">Decimeter</option>
-				<option value="meter">Meter</option>
-				<option value="foot">Foot</option>
+				<option value="millimeter">Millimeters</option>
+				<option value="centimeter">Centimeters</option>
+				<option value="decimeter">Decimeters</option>
+				<option value="meter">Meters</option>
+				<option value="foot">Foots</option>
 			</select>
 		</legend>
 
@@ -17,11 +17,11 @@
 			<input @input="displayToSection1" class="unit-converter__input2" type="number" v-model="section2.display">
 	
 			<select @change="displayToSection2" v-model="section2.unit" class="unit-converter__selector2">
-				<option value="millimeter">Millimeter</option>
-				<option value="centimeter">Centimeter</option>
-				<option value="decimeter">Decimeter</option>
-				<option value="meter">Meter</option>
-				<option value="foot">Foot</option>
+				<option value="millimeter">Millimeters</option>
+				<option value="centimeter">Centimeters</option>
+				<option value="decimeter">Decimeters</option>
+				<option value="meter">Meters</option>
+				<option value="foot">Foots</option>
 			</select>
 		</legend>
 	</section>
@@ -126,7 +126,7 @@
 		border-bottom: solid 2px #000;
 		border-radius:  0 0 1rem 1rem;
 	}
-	
+
 	.unit-converter__header {
 		font-size: 4rem;
 		font-weight: 600;
