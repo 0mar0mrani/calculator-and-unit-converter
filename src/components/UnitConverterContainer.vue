@@ -1,11 +1,11 @@
 <template>
-	<div class="container">
-		<div class="buttons">
-			<button class="button button-left " :class="{ buttonLengthActive : showLength }" @click="showLengthConverter">
+	<div class="unit-container">
+		<div class="unit-container__buttons">
+			<button class="unit-container__button unit-container__button--left " :class="{ 'unit-container__button--length' : showLength }" @click="showLengthConverter">
 				<img src="../../assets/svg/length.svg" alt="Weight icon">
 			</button>
 			
-			<button class="button button-right " :class="{ buttonWeightActive : showWeight }" @click="showWeightConverter">
+			<button class="unit-container__button unit-container__button--right " :class="{ 'unit-container__button--weight' : showWeight }" @click="showWeightConverter">
 				<img src="../../assets/svg/weight.svg" alt="Weight icon">
 			</button>
 		</div>
@@ -49,7 +49,7 @@
 
 
 <style>
-	.container {
+	.unit-container {
 		display: flex;
 		flex-direction: column;
 		max-width: 40rem;
@@ -59,11 +59,11 @@
 		margin-bottom: 10rem;
 	}
 
-	.buttons {
+	.unit-container__buttons {
 		display: flex;
 	}
 
-	.button {
+	.unit-container__button {
 		background-color: #BEBEBE;
 		height: 6rem;
 		width: 50%;
@@ -75,14 +75,14 @@
 		align-items: center;
 	}
 
-	.button img {
+	.unit-container__button img {
 		width: 4rem;
 		height: 4rem;
 		transition: all 0.3s;
 		transform: scale(0.8);
 	}
 
-	.button-left {
+	.unit-container__button--left {
 		border-left: solid 2px #000;
 		border-top: solid 2px #000;
 		border-right: solid 2px #000;
@@ -91,27 +91,27 @@
 		border-radius: 1rem 0 0 0;
 	}
 
-	.button-right {
+	.unit-container__button--right {
 		border-right: solid 2px #000;
 		border-top: solid 2px #000;
 		border-bottom: solid 2px #000;
 		border-radius: 0 1rem 0 0;
 	}
 
-	.buttonLengthActive {
+	.unit-container__button--length {
 		background-color: #F2D7EE;
 		border-bottom: unset;
 		cursor: unset;
 	} 
 	
-	.buttonWeightActive {
+	.unit-container__button--weight {
 		background-color: #D9F7FA;
 		border-bottom: unset;
 		cursor: unset;
 	}
 	
-	.buttonLengthActive img,
-	.buttonWeightActive img {
+	.unit-container__button--length img,
+	.unit-container__button--weight img {
 		transform: scale(1);
 	}
 </style>
