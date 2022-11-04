@@ -77,6 +77,9 @@
 		border: solid 2px #000;
 		border-radius: 2rem;
 		background-color: #fff;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 
 	.calculator__buttons {
