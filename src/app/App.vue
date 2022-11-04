@@ -81,7 +81,7 @@
 	}
 
 	.button {
-		background-color: #696969;
+		background-color: #BEBEBE;
 		height: 6rem;
 		width: 50%;
 		border: none;
