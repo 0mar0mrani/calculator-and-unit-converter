@@ -33,12 +33,12 @@
 			return {
 				section1: {
 					display: '',
-					unit: "millimeter",
+					unit: "foot",
 				},
 				
 				section2: {
 					display: '',
-					unit: "millimeter",
+					unit: "meter",
 				},
 			}
 		},

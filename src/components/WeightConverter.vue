@@ -35,12 +35,12 @@
 			return {
 				section1: {
 					display: '',
-					unit: "gram",
+					unit: "pound",
 				},
 				
 				section2: {
 					display: '',
-					unit: "gram",
+					unit: "kilogramgram",
 				},
 			}
 		},
