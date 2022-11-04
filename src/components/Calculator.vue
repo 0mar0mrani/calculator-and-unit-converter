@@ -119,7 +119,17 @@
 		width: 100%;
 	}
 
+	@media screen and (max-width: 430px) {
+		.calculator {
+			margin: 10rem 2rem;
+		}
+	}
+
 	@media screen and (max-width: 350px) {
+	.calculator {
+		margin: 10rem 1rem;
+	}
+
 	.calculator__number,
 	.calculator__period,
 	.calculator__operator,
@@ -132,5 +142,4 @@
 		font-size: 5rem;
 	}
 }
-	
 </style>

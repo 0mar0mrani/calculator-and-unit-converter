@@ -114,4 +114,16 @@
 	.unit-container__button--weight img {
 		transform: scale(1);
 	}
+
+	@media screen and (max-width: 430px) {
+		.unit-container {
+			margin: 0 2rem;
+		}
+	}
+
+	@media screen and (max-width: 350px) {
+		.unit-container {
+			margin: 0 1rem;
+		}
+	}
 </style>
