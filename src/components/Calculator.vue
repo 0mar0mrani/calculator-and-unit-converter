@@ -118,4 +118,19 @@
 		border-radius: 2rem;
 		width: 100%;
 	}
+
+	@media screen and (max-width: 350px) {
+	.calculator__number,
+	.calculator__period,
+	.calculator__operator,
+	.calculator__reset,
+	.calculator__equals {
+		font-size: 2.5rem;
+	}
+
+	.calculator__display {
+		font-size: 5rem;
+	}
+}
+	
 </style>
