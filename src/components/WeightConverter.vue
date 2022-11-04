@@ -166,4 +166,28 @@
 		border-radius: 0.5rem;
 		border: solid 2px #000;
 	}
+
+	@media screen and (max-width: 350px) {
+		.unit-converter__section1 {
+			margin-bottom: 4rem;
+		}
+		.unit-converter__section1,
+		.unit-converter__section2 {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.unit-converter__selector1,
+		.unit-converter__selector2 {
+			order: 1;
+			width: 100%;
+		}
+
+		.unit-converter__input1, 
+		.unit-converter__input2 {
+			order: 2;
+			flex-grow: 1;
+			width: 100%;
+		}
+	}
 </style>
