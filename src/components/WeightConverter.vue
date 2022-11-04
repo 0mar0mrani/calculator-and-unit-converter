@@ -42,17 +42,17 @@
 		},
 
 		computed: {
-			section1ValueInMillimeters() {
-				return this.convertValueToMillimeters(this.section1);
+			section1ValueInGram() {
+				return this.convertValueToGram(this.section1);
 			},
 
-			section2ValueInMillimeters() {
-				return this.convertValueToMillimeters(this.section2);
+			section2ValueInGram() {
+				return this.convertValueToGram(this.section2);
 			}
 		},
 
 		methods: {
-			convertValueToMillimeters(object) {
+			convertValueToGram(object) {
 				switch(object.unit) {
 					case 'gram': 
 						return object.display;
@@ -71,7 +71,7 @@
 				}
 			},
 
-			convertMillimetersToRightUnit(object, computed) {
+			convertGramToRightUnit(object, computed) {
 				switch(object.unit) {
 					case 'gram':
 						return computed;
@@ -92,7 +92,7 @@
 
 			displayToSection1() {
 				this.section1.display = '';
-				const value = this.convertMillimetersToRightUnit(this.section1, this.section2ValueInMillimeters);
+				const value = this.convertGramToRightUnit(this.section1, this.section2ValueInGram);
 
 				if (value !== 0) {
 					this.section1.display = value;
@@ -101,7 +101,7 @@
 
 			displayToSection2() {
 				this.section2.display = '';
-				const value = this.convertMillimetersToRightUnit(this.section2, this.section1ValueInMillimeters);
+				const value = this.convertGramToRightUnit(this.section2, this.section1ValueInGram);
 				
 				if (value !== 0) {
 					this.section2.display = value;
