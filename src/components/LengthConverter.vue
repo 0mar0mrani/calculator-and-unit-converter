@@ -147,7 +147,7 @@
 	.unitConverter__input1, 
 	.unitConverter__input2 {
 		flex-grow: 1;
-		font-size: 3rem;
+		font-size: 3.5rem;
 		width: 60%;
 		border-radius: 0.5rem;
 		border: solid 2px #000;
