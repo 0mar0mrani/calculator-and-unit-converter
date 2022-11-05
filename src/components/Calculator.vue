@@ -1,31 +1,34 @@
 <template>
 	<section class="calculator">
-		<div class="calculator__display">{{ display }}</div>
+		<div class="calculator__display">
+			{{ display }}
+		</div>
 
 		<div class="calculator__buttons">
-			<button @click="displayNumberOperator($event)" class="calculator__operator">+</button>
-			<button @click="displayNumberOperator($event)" class="calculator__operator">-</button>
-			<button @click="displayNumberOperator($event)" class="calculator__operator">*</button>
-			<button @click="displayNumberOperator($event)" class="calculator__operator">/</button>
+			<button @click="handleOperatorInput('+')" class="calculator__operator">+</button>
+			<button @click="handleOperatorInput('-')" class="calculator__operator">-</button>
+			<button @click="handleOperatorInput('*')" class="calculator__operator">*</button>
+			<button @click="handleOperatorInput('/')" class="calculator__operator">/</button>
 
-			<button @click="displayNumberOperator($event)" class="calculator__number">7</button>
-			<button @click="displayNumberOperator($event)" class="calculator__number">8</button>
-			<button @click="displayNumberOperator($event)" class="calculator__number">9</button>
+			<button @click="handleNumberInput(7)" class="calculator__number">7</button>
+			<button @click="handleNumberInput(8)" class="calculator__number">8</button>
+			<button @click="handleNumberInput(9)" class="calculator__number">9</button>
 
-			<button @click="displayNumberOperator($event)" class="calculator__number">4</button>
-			<button @click="displayNumberOperator($event)" class="calculator__number">5</button>
-			<button @click="displayNumberOperator($event)" class="calculator__number">6</button>
+			<button @click="handleNumberInput(4)" class="calculator__number">4</button>
+			<button @click="handleNumberInput(5)" class="calculator__number">5</button>
+			<button @click="handleNumberInput(6)" class="calculator__number">6</button>
 
 
-			<button @click="displayNumberOperator($event)" class="calculator__number">1</button>
-			<button @click="displayNumberOperator($event)" class="calculator__number">2</button>
-			<button @click="displayNumberOperator($event)" class="calculator__number">3</button>
+			<button @click="handleNumberInput(1)" class="calculator__number">1</button>
+			<button @click="handleNumberInput(2)" class="calculator__number">2</button>
+			<button @click="handleNumberInput(3)" class="calculator__number">3</button>
 	
 
-			<button @click="displayNumberOperator($event)" class="calculator__period">.</button>
-			<button @click="displayNumberOperator($event)" class="calculator__number">0</button>
-			<button @click="resetCalculator" class="calculator__reset">C</button>
-			<button @click="calculateEquation" class="calculator__equals">=</button>
+			<button @click="handleNumberInput('.')" class="calculator__period">.</button>
+			<button @click="handleNumberInput(0)" class="calculator__number">0</button>
+			<button @click="clearResult" class="calculator__reset">C</button>
+
+			<button @click="handleEqualsInput" class="calculator__equals">=</button>
 		</div>
 	</section>
 </template>
@@ -35,23 +38,68 @@
 		data() {
 			return {
 				display: '',
+				currentNumber: 0,
+				arr: [],
 			}
 		},
 
 		methods: {
-			calculateEquation() {
-				const answer = eval(this.display);
+			clearResult() {
+				this.display = '';
+				this.arr = [];
+			},
+			
+			handleOperatorInput(operator) {
+				this.display += operator;
+				this.arr.push(this.currentNumber)
+				this.arr.push(operator)
+			},
+
+			handleNumberInput(number) {
+				this.display += number;
+				this.currentNumber = number;
+			},
+			
+			handleEqualsInput() {
+				this.arr.push(this.currentNumber)
+				const answer = this.calculate();
+				this.arr = [];
+				this.currentNumber = answer;
 				this.display = answer;
 			},
 
-			displayNumberOperator(event) {
-				const buttonValue = event.target.innerText;
-				this.display += buttonValue;
-			},
+			calculate() {
+				let currentOperator = null;
 
-			resetCalculator() {
-				this.display = '';
-			}
+				const answer = this.arr.reduce((previousValue, currentValue) => {
+					if (typeof currentValue === 'number') {
+						
+						if (currentOperator !== null) {
+							switch(currentOperator) {
+								case '+':
+									return previousValue + currentValue;
+								case '-':
+									return previousValue - currentValue;
+								case '/':
+									return previousValue / currentValue;
+								case '*':
+									return previousValue * currentValue;
+							} 
+							
+						} else {
+							return previousValue + currentValue;
+						}
+
+					} else if (typeof currentValue === 'string') {
+						currentOperator = currentValue;
+						return previousValue;
+					}
+
+
+				}, 0);
+
+				return answer;
+			},
 		}
 	}
 </script>
