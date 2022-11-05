@@ -7,8 +7,8 @@
 		<div class="calculator__buttons">
 			<button @click="handleOperatorInput('+')" class="calculator__operator">+</button>
 			<button @click="handleOperatorInput('-')" class="calculator__operator">-</button>
-			<button @click="handleOperatorInput('*')" class="calculator__operator">*</button>
-			<button @click="handleOperatorInput('/')" class="calculator__operator">/</button>
+			<button @click="handleOperatorInput('×')" class="calculator__operator">×</button>
+			<button @click="handleOperatorInput('÷')" class="calculator__operator">÷</button>
 
 			<button @click="handleNumberInput(7)" class="calculator__number">7</button>
 			<button @click="handleNumberInput(8)" class="calculator__number">8</button>
@@ -80,12 +80,12 @@
 									return previousValue + currentValue;
 								case '-':
 									return previousValue - currentValue;
-								case '/':
+								case '÷':
 									return previousValue / currentValue;
-								case '*':
+								case '×':
 									return previousValue * currentValue;
 							} 
-							
+
 						} else {
 							return previousValue + currentValue;
 						}
@@ -141,6 +141,9 @@
 	.calculator__operator,
 	.calculator__reset,
 	.calculator__equals {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		font-size: 4rem;
 		width: 80%;
 		aspect-ratio : 1 / 1;
