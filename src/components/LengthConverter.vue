@@ -2,9 +2,9 @@
 	<section class="unit-converter">
 		<label class="unit-converter__header" for="length">Length</label>
 		<legend class="unit-converter__section1">
-			<input @input="displayToSection2" class="unit-converter__input1" type="number" v-model="section1.display">
+			<input @input="handleConverter2Input" class="unit-converter__input1" type="number" v-model="section1.display">
 
-			<select @change="displayToSection1"  v-model="section1.unit"  class="unit-converter__selector1">
+			<select @change="handleConverter2Change"  v-model="section1.unit"  class="unit-converter__selector1">
 				<option value="millimeter">Millimeters</option>
 				<option value="centimeter">Centimeters</option>
 				<option value="decimeter">Decimeters</option>
@@ -14,9 +14,9 @@
 		</legend>
 
 		<legend class="unit-converter__section2">	
-			<input @input="displayToSection1" class="unit-converter__input2" type="number" v-model="section2.display">
+			<input @input="handleConverter1Input" class="unit-converter__input2" type="number" v-model="section2.display">
 	
-			<select @change="displayToSection2" v-model="section2.unit" class="unit-converter__selector2">
+			<select @change="handleConverter1Change" v-model="section2.unit" class="unit-converter__selector2">
 				<option value="millimeter">Millimeters</option>
 				<option value="centimeter">Centimeters</option>
 				<option value="decimeter">Decimeters</option>
@@ -54,6 +54,24 @@
 		},
 
 		methods: {
+			// Handler
+			handleConverter1Input() {
+				this.calculateAndDisplayResultToSection1();
+			},
+
+			handleConverter2Input() {
+				this.calculateAndDisplayResultToSection2();
+			},
+
+			handleConverter2Change() {
+				this.calculateAndDisplayResultToSection1();
+			},
+
+			handleConverter1Change() {
+				this.calculateAndDisplayResultToSection2();
+			},
+			
+			// Methods
 			convertValueToMillimeters(object) {
 				switch(object.unit) {
 					case 'millimeter': 
@@ -92,7 +110,7 @@
 				}
 			},
 
-			displayToSection1() {
+			calculateAndDisplayResultToSection1() {
 				this.section1.display = '';
 				const value = this.convertMillimetersToRightUnit(this.section1, this.section2ValueInMillimeters);
 
@@ -101,7 +119,7 @@
 				}
 			},
 
-			displayToSection2() {
+			calculateAndDisplayResultToSection2() {
 				this.section2.display = '';
 				const value = this.convertMillimetersToRightUnit(this.section2, this.section1ValueInMillimeters);
 				
