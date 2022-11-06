@@ -10,22 +10,22 @@
 			<button @click="handleOperatorInput('×')" class="calculator__operator">×</button>
 			<button @click="handleOperatorInput('÷')" class="calculator__operator">÷</button>
 
-			<button @click="handleNumberInput(7)" class="calculator__number">7</button>
-			<button @click="handleNumberInput(8)" class="calculator__number">8</button>
-			<button @click="handleNumberInput(9)" class="calculator__number">9</button>
+			<button @click="handleNumberInput('7')" class="calculator__number">7</button>
+			<button @click="handleNumberInput('8')" class="calculator__number">8</button>
+			<button @click="handleNumberInput('9')" class="calculator__number">9</button>
 
-			<button @click="handleNumberInput(4)" class="calculator__number">4</button>
-			<button @click="handleNumberInput(5)" class="calculator__number">5</button>
-			<button @click="handleNumberInput(6)" class="calculator__number">6</button>
+			<button @click="handleNumberInput('4')" class="calculator__number">4</button>
+			<button @click="handleNumberInput('5')" class="calculator__number">5</button>
+			<button @click="handleNumberInput('6')" class="calculator__number">6</button>
 
 
-			<button @click="handleNumberInput(1)" class="calculator__number">1</button>
-			<button @click="handleNumberInput(2)" class="calculator__number">2</button>
-			<button @click="handleNumberInput(3)" class="calculator__number">3</button>
+			<button @click="handleNumberInput('1')" class="calculator__number">1</button>
+			<button @click="handleNumberInput('2')" class="calculator__number">2</button>
+			<button @click="handleNumberInput('3')" class="calculator__number">3</button>
 	
 
 			<button @click="handleNumberInput('.')" class="calculator__period">.</button>
-			<button @click="handleNumberInput(0)" class="calculator__number">0</button>
+			<button @click="handleNumberInput('0')" class="calculator__number">0</button>
 			<button @click="clearResult" class="calculator__reset">C</button>
 
 			<button @click="handleEqualsInput" class="calculator__equals">=</button>
@@ -38,40 +38,49 @@
 		data() {
 			return {
 				display: '',
-				currentNumber: 0,
+				currentNumber: '',
 				arr: [],
 			}
+		},
+
+		computed: {
+			currentNumberAsNumber() {
+				return Number(this.currentNumber)
+			},
 		},
 
 		methods: {
 			clearResult() {
 				this.display = '';
+				this.currentNumber = '',
 				this.arr = [];
 			},
 			
 			handleOperatorInput(operator) {
 				this.display += operator;
-				this.arr.push(this.currentNumber)
+				this.arr.push(this.currentNumberAsNumber)
 				this.arr.push(operator)
+				this.currentNumber = '';
 			},
 
 			handleNumberInput(number) {
 				this.display += number;
-				this.currentNumber = number;
+				this.currentNumber += number;
 			},
 			
 			handleEqualsInput() {
-				this.arr.push(this.currentNumber)
+				this.arr.push(this.currentNumberAsNumber)
 				const answer = this.calculate();
 				this.arr = [];
-				this.currentNumber = answer;
 				this.display = answer;
+				this.currentNumber = answer;
 			},
 
 			calculate() {
 				let currentOperator = null;
 
 				const answer = this.arr.reduce((previousValue, currentValue) => {
+					console.log(currentValue);
 					if (typeof currentValue === 'number') {
 						
 						if (currentOperator !== null) {
