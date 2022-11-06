@@ -129,6 +129,7 @@
 		width: 100%;
 		height: 10rem;
 		font-size: 6rem;
+		line-height: 10rem;
 		margin-bottom: 2rem;
 		border: solid 2px #000;
 		border-radius: 2rem;
