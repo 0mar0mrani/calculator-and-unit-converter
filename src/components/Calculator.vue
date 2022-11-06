@@ -39,7 +39,7 @@
 			return {
 				display: '',
 				currentNumber: '',
-				arr: [],
+				calculationArray: [],
 			}
 		},
 
@@ -53,13 +53,13 @@
 			clearResult() {
 				this.display = '';
 				this.currentNumber = '',
-				this.arr = [];
+				this.calculationArray = [];
 			},
 			
 			handleOperatorInput(operator) {
 				this.display += operator;
-				this.arr.push(this.currentNumberAsNumber)
-				this.arr.push(operator)
+				this.calculationArray.push(this.currentNumberAsNumber)
+				this.calculationArray.push(operator)
 				this.currentNumber = '';
 			},
 
@@ -69,9 +69,9 @@
 			},
 			
 			handleEqualsInput() {
-				this.arr.push(this.currentNumberAsNumber)
+				this.calculationArray.push(this.currentNumberAsNumber)
 				const answer = this.calculate();
-				this.arr = [];
+				this.calculationArray = [];
 				this.display = answer;
 				this.currentNumber = answer;
 			},
@@ -79,8 +79,7 @@
 			calculate() {
 				let currentOperator = null;
 
-				const answer = this.arr.reduce((previousValue, currentValue) => {
-					console.log(currentValue);
+				const answer = this.calculationArray.reduce((previousValue, currentValue) => {
 					if (typeof currentValue === 'number') {
 						
 						if (currentOperator !== null) {
