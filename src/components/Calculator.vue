@@ -57,6 +57,7 @@
 			},
 			
 			handleOperatorInput(operator) {
+				this.checkForErrorMessage();
 				this.display += operator;
 
 				if (this.currentNumber !== '') {
@@ -68,6 +69,7 @@
 			},
 
 			handleNumberInput(number) {
+				this.checkForErrorMessage();
 				this.display += number;
 				this.currentNumber += number;
 			},
@@ -122,6 +124,12 @@
 				}, 0);
 
 				return answer;
+			},
+
+			checkForErrorMessage() {
+				if (this.display === 'ERROR') {
+					this.clearResult();
+				}
 			},
 		}
 	}
