@@ -70,6 +70,7 @@
 
 			handleNumberInput(number) {
 				this.checkForErrorMessage();
+				this.checkForZero();
 				this.display += number;
 				this.currentNumber += number;
 			},
@@ -129,6 +130,12 @@
 			checkForErrorMessage() {
 				if (this.display === 'ERROR') {
 					this.clearResult();
+				}
+			},
+
+			checkForZero() {
+				if (this.display === 0) {
+					this.display = '';
 				}
 			},
 		}
