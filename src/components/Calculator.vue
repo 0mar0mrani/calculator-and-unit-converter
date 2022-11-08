@@ -58,7 +58,11 @@
 			
 			handleOperatorInput(operator) {
 				this.display += operator;
-				this.calculationArray.push(this.currentNumberAsNumber)
+
+				if (this.currentNumber !== '') {
+					this.calculationArray.push(this.currentNumberAsNumber)
+				} 
+				
 				this.calculationArray.push(operator)
 				this.currentNumber = '';
 			},
@@ -70,16 +74,22 @@
 			
 			handleEqualsInput() {
 				this.calculationArray.push(this.currentNumberAsNumber)
-				const answer = this.calculate();
+				const answer = this.calculate();				
 				this.calculationArray = [];
-				this.display = answer;
-				this.currentNumber = answer;
+
+				if (isNaN(answer) === true) {
+					this.display = 'ERROR';
+				} else {
+					this.display = answer;
+					this.currentNumber = answer;
+				}
 			},
 
 			calculate() {
 				let currentOperator = null;
+				let indexOfCurrentOperator;
 
-				const answer = this.calculationArray.reduce((previousValue, currentValue) => {
+				const answer = this.calculationArray.reduce((previousValue, currentValue, index) => {
 					if (typeof currentValue === 'number') {
 						
 						if (currentOperator !== null) {
@@ -95,17 +105,21 @@
 							} 
 
 						} else {
-							return previousValue + currentValue;
+							return currentValue;
 						}
 
 					} else if (typeof currentValue === 'string') {
-						currentOperator = currentValue;
-						return previousValue;
+						if (index - 1 === indexOfCurrentOperator) {
+							return NaN;
+
+						} else {
+							currentOperator = currentValue;
+							indexOfCurrentOperator = index;
+							return previousValue;
+						}
 					}
 
-
 				}, 0);
-
 				return answer;
 			},
 		}
