@@ -173,6 +173,9 @@
 		width: 60%;
 		border-radius: 0.5rem;
 		border: solid 2px #000;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 
 	.unit-converter__selector1,
