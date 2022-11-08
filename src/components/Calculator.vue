@@ -52,7 +52,7 @@
 		methods: {
 			clearResult() {
 				this.display = '';
-				this.currentNumber = '',
+				this.currentNumber = '';
 				this.calculationArray = [];
 			},
 			
