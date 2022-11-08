@@ -74,7 +74,7 @@
 			
 			handleEqualsInput() {
 				this.calculationArray.push(this.currentNumberAsNumber)
-				const answer = this.calculate();				
+				const answer = this.calculateArray();				
 				this.calculationArray = [];
 
 				if (isNaN(answer) === true) {
@@ -85,7 +85,7 @@
 				}
 			},
 
-			calculate() {
+			calculateArray() {
 				let currentOperator = null;
 				let indexOfCurrentOperator;
 
@@ -120,6 +120,7 @@
 					}
 
 				}, 0);
+
 				return answer;
 			},
 		}
