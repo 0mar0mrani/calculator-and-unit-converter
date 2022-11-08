@@ -89,40 +89,44 @@
 			},
 
 			calculateArray() {
-				let currentOperator = null;
+				let currentOperator;
 				let indexOfCurrentOperator;
 
 				const answer = this.calculationArray.reduce((previousValue, currentValue, index) => {
 					if (typeof currentValue === 'number') {
-						
-						if (currentOperator !== null) {
-							switch(currentOperator) {
-								case '+':
-									return previousValue + currentValue;
-								case '-':
-									return previousValue - currentValue;
-								case '÷':
-									return previousValue / currentValue;
-								case '×':
-									return previousValue * currentValue;
-							} 
-
-						} else {
-							return currentValue;
-						}
+						return calculateCurrentNumber(previousValue, currentValue);
 
 					} else if (typeof currentValue === 'string') {
-						if (index - 1 === indexOfCurrentOperator) {
-							return NaN;
-
-						} else {
-							currentOperator = currentValue;
-							indexOfCurrentOperator = index;
-							return previousValue;
-						}
+						return setCurrentOperator(previousValue, currentValue, index);
 					}
 
 				}, 0);
+
+				function setCurrentOperator(previousValue, currentValue, index) {
+					if (index - 1 === indexOfCurrentOperator) {
+						return NaN;
+
+					} else {
+						currentOperator = currentValue;
+						indexOfCurrentOperator = index;
+						return previousValue;
+					}
+				}
+
+				function calculateCurrentNumber(previousValue, currentValue) {
+					switch(currentOperator) {
+						case '+':
+							return previousValue + currentValue;
+						case '-':
+							return previousValue - currentValue;
+						case '÷':
+							return previousValue / currentValue;
+						case '×':
+							return previousValue * currentValue;
+						default: 
+							return currentValue
+					} 
+				}
 
 				return answer;
 			},
