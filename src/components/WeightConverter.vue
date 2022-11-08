@@ -2,7 +2,7 @@
 	<section class="unit-converter">
 		<label class="unit-converter__header" for="length">Weight</label>
 		<legend class="unit-converter__section1">
-			<input @input="handleConverter1Input" class="unit-converter__input1" type="number" v-model="section1.display">
+			<input @input="handleConverter1Input" class="unit-converter__input1" type="number" v-model="section1.input">
 
 			<select @change="handleConverter1Change"  v-model="section1.unit"  class="unit-converter__selector1">
 				<option value="gram">Grams</option>
@@ -15,7 +15,7 @@
 		</legend>
 
 		<legend class="unit-converter__section2">	
-			<input @input="handleConverter2Input" class="unit-converter__input2" type="number" v-model="section2.display">
+			<input @input="handleConverter2Input" class="unit-converter__input2" type="number" v-model="section2.input">
 	
 			<select @change="handleConverter2Change" v-model="section2.unit" class="unit-converter__selector2">
 				<option value="gram">Grams</option>
@@ -34,12 +34,12 @@
 		data() {
 			return {
 				section1: {
-					display: '',
+					input: '',
 					unit: "pound",
 				},
 				
 				section2: {
-					display: '',
+					input: '',
 					unit: "kilogramgram",
 				},
 			}
@@ -77,22 +77,22 @@
 			convertValueToGram(object) {
 				switch(object.unit) {
 					case 'gram': 
-						return object.display;
+						return object.input;
 
 					case 'decogram':
-						return object.display * 10;
+						return object.input * 10;
 
 					case 'hectogram':
-						return object.display * 100;
+						return object.input * 100;
 					
 					case 'kilogramgram':
-						return object.display * 1000;
+						return object.input * 1000;
 
 					case 'ounce':
-						return object.display * 28.3495231;
+						return object.input * 28.3495231;
 					
 					case 'pound':
-						return object.display * 453.59237;
+						return object.input * 453.59237;
 				}
 			},
 
@@ -119,20 +119,20 @@
 			},
 
 			calculateAndDisplayResultToSection1() {
-				this.section1.display = '';
+				this.section1.input = '';
 				const value = this.convertGramToRightUnit(this.section1, this.section2ValueInGram);
 
 				if (value !== 0) {
-					this.section1.display = value;
+					this.section1.input = value;
 				}
 			},
 
 			calculateAndDisplayResultToSection2() {
-				this.section2.display = '';
+				this.section2.input = '';
 				const value = this.convertGramToRightUnit(this.section2, this.section1ValueInGram);
 				
 				if (value !== 0) {
-					this.section2.display = value;
+					this.section2.input = value;
 				}
 			},
 		}
