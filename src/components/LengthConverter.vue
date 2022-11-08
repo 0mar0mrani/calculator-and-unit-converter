@@ -91,22 +91,22 @@
 				}
 			},
 
-			convertMillimetersToRightUnit(object, computed) {
+			convertMillimetersToRightUnit(object, computedNumber) {
 				switch(object.unit) {
 					case 'millimeter':
-						return computed;
+						return computedNumber;
 
 					case 'centimeter':
-						return computed / 10;
+						return computedNumber / 10;
 
 					case 'decimeter':
-						return computed / 100;
+						return computedNumber / 100;
 					
 					case 'meter':
-						return computed / 1000;
+						return computedNumber / 1000;
 					
 					case 'foot':
-						return computed / 304.8;
+						return computedNumber / 304.8;
 				}
 			},
 
