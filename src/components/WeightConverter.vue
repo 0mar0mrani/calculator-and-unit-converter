@@ -1,7 +1,7 @@
 <template>
 	<section class="unit-converter">
 		<label class="unit-converter__header" for="length">Weight</label>
-		<legend class="unit-converter__section1">
+		<div class="unit-converter__section1">
 			<input @input="handleConverter1Input" class="unit-converter__input1" type="number" v-model="section1.input">
 
 			<select @change="handleConverter1Change"  v-model="section1.unit"  class="unit-converter__selector1">
@@ -12,9 +12,9 @@
 				<option value="ounce">Ounces</option>
 				<option value="pound">Punds</option>
 			</select>
-		</legend>
+		</div>
 
-		<legend class="unit-converter__section2">	
+		<div class="unit-converter__section2">	
 			<input @input="handleConverter2Input" class="unit-converter__input2" type="number" v-model="section2.input">
 	
 			<select @change="handleConverter2Change" v-model="section2.unit" class="unit-converter__selector2">
@@ -25,7 +25,7 @@
 				<option value="ounce">Ounces</option>
 				<option value="pound">Punds</option>
 			</select>
-		</legend>
+		</div>
 	</section>
 </template>
 
