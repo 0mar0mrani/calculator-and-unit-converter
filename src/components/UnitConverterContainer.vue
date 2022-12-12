@@ -64,15 +64,15 @@
 	}
 
 	.unit-container__button {
-		background-color: #BEBEBE;
-		height: 6rem;
-		width: 50%;
-		border: none;
-		cursor: pointer;
-		transition: all 0.1s;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		height: 6rem;
+		width: 50%;
+		background-color: #BEBEBE;
+		border: none;
+		cursor: pointer;
+		transition: all 0.1s;
 	}
 
 	.unit-container__button img {

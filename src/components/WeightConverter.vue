@@ -141,10 +141,10 @@
 
 <style scoped>
 	.unit-converter {
-		max-width: 40rem;
-		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
+		max-width: 40rem;
+		margin: 0 auto;
 		background-color: #D9F7FA;
 		padding: 2rem;
 		border-left: solid 2px #000;

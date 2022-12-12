@@ -50,12 +50,6 @@
 		},
 
 		methods: {
-			clearResult() {
-				this.display = '';
-				this.currentNumber = '';
-				this.calculationArray = [];
-			},
-			
 			handleOperatorInput(operator) {
 				this.checkForErrorMessage();
 				this.display += operator;
@@ -86,6 +80,12 @@
 					this.display = answer;
 					this.currentNumber = answer;
 				}
+			},
+
+			clearResult() {
+				this.display = '';
+				this.currentNumber = '';
+				this.calculationArray = [];
 			},
 
 			calculateArray() {
@@ -148,15 +148,15 @@
 
 <style>
 	.calculator {
-		max-width: 40rem;
 		display: flex;
-		margin: 10rem auto;
 		flex-direction: column;
-		border: solid 2px #000;
 		padding: 2rem 1rem 2rem 1rem;
+		max-width: 40rem;
+		margin: 10rem auto;
+		background-color: #7B8CDE;
+		border: solid 2px #000;
 		border-radius: 1rem;
 		box-shadow: 0.3rem 0.3rem #000;
-		background-color: #7B8CDE;
 	}
 
 	.calculator__display {
@@ -187,16 +187,16 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin: 0 auto;
 		font-size: 4rem;
 		width: 80%;
+		background-color: #fff;
 		aspect-ratio : 1 / 1;
 		border-radius: 100%;
 		border: solid 2px #000;
 		box-shadow: 0.5rem 0.5rem #000;
 		cursor: pointer;
 		transition: all 0.2s;
-		margin: 0 auto;
-		background-color: #fff;
 	}
 
 	.calculator__number:active,

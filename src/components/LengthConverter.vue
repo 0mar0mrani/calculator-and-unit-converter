@@ -54,7 +54,6 @@
 		},
 
 		methods: {
-			// Handler
 			handleConverter1Input() {
 				this.calculateAndDisplayResultToSection2();
 			},
@@ -71,7 +70,6 @@
 				this.calculateAndDisplayResultToSection2();
 			},
 			
-			// Methods
 			convertValueToMillimeters(object) {
 				switch(object.unit) {
 					case 'millimeter': 
@@ -133,12 +131,12 @@
 
 <style scoped>
 	.unit-converter {
-		max-width: 40rem;
-		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
-		background-color: #F2D7EE;
+		max-width: 40rem;
 		padding: 2rem;
+		margin: 0 auto;
+		background-color: #F2D7EE;
 		border-left: solid 2px #000;
 		border-right: solid 2px #000;
 		border-bottom: solid 2px #000;
