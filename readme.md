@@ -1,6 +1,8 @@
 # Calculator and Unit Converter
 This is a project was made with Vue. It consists of a calculator and a unit converters.
 
+See a live demo [here](calculator-and-unit-converter.netlify.app).
+
 ## Calculator 
 This is a simple calculators where you can use basic operators (+ - * /). My goal was to be able to write out multiple calculation at the same time, where a typical calculator does one calculation at the time. Example of multiple calculations: 2 + 2 * 8 - 1. It does the calculation from left to right.
 
