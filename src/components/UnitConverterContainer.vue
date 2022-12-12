@@ -2,7 +2,7 @@
 	<div class="unit-container">
 		<div class="unit-container__buttons">
 			<button class="unit-container__button unit-container__button--left " :class="{ 'unit-container__button--length' : showLength }" @click="showLengthConverter">
-				<img src="../../assets/svg/length.svg" alt="Weight icon">
+				<img src="../../assets/svg/length.svg" alt="Length icon">
 			</button>
 			
 			<button class="unit-container__button unit-container__button--right " :class="{ 'unit-container__button--weight' : showWeight }" @click="showWeightConverter">
