@@ -1,6 +1,7 @@
 <template>
 	<section class="unit-converter">
 		<label class="unit-converter__header" for="length">Weight</label>
+
 		<div class="unit-converter__section1">
 			<input @input="handleConverter1Input" class="unit-converter__input1" type="number" v-model="section1.input">
 
@@ -56,7 +57,6 @@
 		},
 
 		methods: {
-			// Handler
 			handleConverter1Input() {
 				this.calculateAndDisplayResultToSection2();
 			},
@@ -73,7 +73,6 @@
 				this.calculateAndDisplayResultToSection2();
 			},
 			
-			// Methods
 			convertValueToGram(object) {
 				switch(object.unit) {
 					case 'gram': 
